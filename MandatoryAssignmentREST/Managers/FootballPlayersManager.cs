@@ -6,10 +6,10 @@ namespace MandatoryAssignmentREST.Managers {
         private static int _nextId = 1;
 
         private static readonly List<FootballPlayer> Data = new List<FootballPlayer>() {
-            new FootballPlayer(_nextId,"Victor Siig", 24, 10),
-            new FootballPlayer(_nextId,"Peter Schmeichel", 20, 1),
-            new FootballPlayer(_nextId,"Michael Laudrup", 30, 4),
-            new FootballPlayer(_nextId,"Erling Haaland", 29, 45),
+            new FootballPlayer(_nextId++,"Victor Siig", 24, 10),
+            new FootballPlayer(_nextId++,"Peter Schmeichel", 20, 1),
+            new FootballPlayer(_nextId++,"Michael Laudrup", 30, 4),
+            new FootballPlayer(_nextId++,"Erling Haaland", 29, 45)
         };
 
         public IEnumerable<FootballPlayer> GetAll(int? amount) {
@@ -17,7 +17,7 @@ namespace MandatoryAssignmentREST.Managers {
         }
 
         public FootballPlayer GetById(int id) {
-            return Data.Find(Ipa => Ipa.Id == id);
+            return Data.Find(FootballPlayer => FootballPlayer.Id == id);
         }
 
         public FootballPlayer Add(FootballPlayer newPlayer) {
